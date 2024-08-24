@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Easy Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/111005f0b1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <!-- <img src="images/logo.png" class="logo"> -->
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <!-- <li><a href="#services">Services</a></li> -->
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Ph.D. Scholar</p>
+            <h1>Hello, I'm <span>Agniva</span><br></h1>
+        </div>
+    </div>
+</div>
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png" alt="User Image">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>
+                    I am a Ph.D. researcher in the domain of robotics and automation at IISER Bhopal. My specialization is in multi-agent reinforcement learning, particularly in the problem of generalized persistent monitoring by a team of cooperative multi-agent systems. This research has applications in areas like border patrol and security.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="openTab('education')">Education</p>
+                    <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                    <p class="tab-links" onclick="openTab('achievements')">Achievements</p>
+                </div>
+
+                <div class="tab-contents active-tab" id="education">
+                    <ul>
+                        <li><span>2024 - Present</span><br>Ph.D. Scholar at IISER Bhopal</li>
+                        <li><span>2022 - 2024</span><br>Master's at IIEST Shibpur</li>
+                        <li><span>2019 - 2022</span><br>Bachelor's at RKMVCC Rahara</li>
+                        <li><span>2017 - 2019</span><br>Higher Secondary at RKM Purulia</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023 - 2024</span><br>Dissertation at IISER Bhopal</li>
+                        <li><span>2022 - 2023</span><br>Internships at ISI Kolkata, HRI Allahabad, and IIT Ropar</li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="achievements">
+                    <ul>
+                        <li><span>2024 - Present</span><br>Selected as System Engineer at TCS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------portfolio------------ -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Portfolio</h1>
+        <div class="work-list">
+            <!-- Projects Section -->
+            <div>
+                <i class="fas fa-project-diagram"></i>
+                <h2>Projects</h2>
+                <!-- <p>Quantum Machine Learning For Cancer Image Analysis</p>
+                <a href="#">Learn more</a> -->
+            </div>
+            <!-- Publications Section -->
+            <div>
+                <i class="fas fa-book"></i>
+                <h2>Publications</h2>
+                <!-- <p> resPublishedearch on multi-agent systems and reinforcement learning in IEEE and other reputed journals.</p>
+                <a href="#">View publications</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------contact------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> agniva24@iiserb.ac.in</p>
+                <p><i class="fas fa-phone-square-alt"></i> 9064512313</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <a href="images\Agniva_Banerjee_CV.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Agniva</a></p>
+    </div>
+</div>
+
+
+
+<script>
+    function openTab(tabName) {
+        var i;
+        var x = document.getElementsByClassName("tab-contents");
+        var tabLinks = document.getElementsByClassName("tab-links");
+
+        for (i = 0; i < x.length; i++) {
+            x[i].classList.remove("active-tab");
+        }
+        for (i = 0; i < tabLinks.length; i++) {
+            tabLinks[i].classList.remove("active-link");
+        }
+
+        document.getElementById(tabName).classList.add("active-tab");
+        event.currentTarget.classList.add("active-link");
+    }
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = '< add you own link here >' // add your own app script link here
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
